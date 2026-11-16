@@ -1,0 +1,77 @@
+{
+  "name": "openworkspace-drive",
+  "version": "0.1.0",
+  "description": "OpenWorkspace module: Drive, files and folders in the workspace's own R2 bucket, with quotas, sharing with people and teams, and public links.",
+  "keywords": [
+    "alchemy",
+    "cloudflare",
+    "drive",
+    "files",
+    "openworkspace",
+    "r2",
+    "self-hosted",
+    "workers"
+  ],
+  "license": "Apache-2.0",
+  "author": "Edgard Navarro-Clemons",
+  "files": [
+    "alchemy.ts",
+    "index.ts",
+    "shared",
+    "worker",
+    "src",
+    "migrations",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./alchemy.ts",
+    "./alchemy": "./alchemy.ts"
+  },
+  "scripts": {
+    "dev": "ALLOW_MOCK_AUTH=true alchemy dev dev.run.ts",
+    "test": "bun run test:unit && bun run test:stack",
+    "test:unit": "bun test ./test/unit",
+    "test:stack": "bun test --preload ./test/stack/setup.ts --timeout 60000 ./test/stack",
+    "typecheck": "tsc",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "db:generate": "drizzle-kit generate",
+    "core:pack": "bun scripts/pack-core.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.107.1",
+    "aws4fetch": "1.0.20",
+    "drizzle-orm": "0.45.4",
+    "hono": "4.13.17",
+    "lucide-react": "1.71.0",
+    "react": "19.3.1",
+    "react-router": "8.5.1",
+    "sonner": "2.0.8",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@alchemy.run/cloudflare": "2.0.0-beta.85",
+    "@alchemy.run/test": "2.0.0-beta.85",
+    "@effect/platform-bun": "4.1.3",
+    "@effect/platform-node": "4.1.3",
+    "@open-workspace/core": "file:.core/open-workspace-core.tgz",
+    "@open-workspace/email": "file:.core/open-workspace-email.tgz",
+    "@oxlint/plugins": "1.93.0",
+    "@types/bun": "1.4.4",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "alchemy": "2.0.0-beta.85",
+    "drizzle-kit": "0.31.11",
+    "effect": "4.1.3",
+    "oxfmt": "0.78.0",
+    "oxlint": "1.93.0",
+    "typescript": "7.0.2",
+    "ultracite": "8.1.1"
+  },
+  "peerDependencies": {
+    "@open-workspace/core": ">=0.4.3"
+  }
+}

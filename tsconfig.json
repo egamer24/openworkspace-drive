@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node", "bun"]
+  },
+  "include": ["."],
+  "exclude": [
+    "node_modules",
+    ".alchemy",
+    ".core",
+    "tools/oxlint/anti-slop",
+    "oxlint.config.ts",
+    "oxfmt.config.ts"
+  ]
+}
